@@ -1,12 +1,16 @@
 package com.test.dproject.officeassistant;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.Window;
 
 /**
  * Created by Subhashinie on 3/23/2017.
@@ -18,17 +22,24 @@ public class DrawPathView extends SurfaceView implements Runnable {
     Bitmap robot;
     Bitmap map;
     float x,y;
+    Canvas c1;
 
     public DrawPathView(Context context) {
         super(context);
         map= BitmapFactory.decodeResource(getResources(),R.drawable.floorlayout);
+        //map = Bitmap.createScaledBitmap(map, 100,100,true);
         robot = BitmapFactory.decodeResource(getResources(),R.drawable.tiny_robot);
         x=y=0;
         holder = getHolder();
+        //Canvas c = new Canvas();//holder.lockCanvas();
+        //c.drawBitmap(map,x,y,null);
+        //holder.unlockCanvasAndPost(c);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+
+
         super.onDraw(canvas);
     }
 
@@ -38,9 +49,11 @@ public class DrawPathView extends SurfaceView implements Runnable {
             if(!holder.getSurface().isValid()){
                 continue;
             }
-            Canvas c = holder.lockCanvas();
-            c.drawBitmap(map,x,y,null);
-            holder.unlockCanvasAndPost(c);
+            Canvas c2 = holder.lockCanvas();
+            //c2.drawBitmap(map,x,y,null);
+
+            c2.drawBitmap(robot,x,y,null);
+            holder.unlockCanvasAndPost(c2);
         }
 
     }

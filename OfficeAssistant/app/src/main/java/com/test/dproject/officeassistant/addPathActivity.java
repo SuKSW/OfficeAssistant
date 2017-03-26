@@ -1,16 +1,24 @@
 package com.test.dproject.officeassistant;
 
 
+import android.annotation.TargetApi;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+import android.support.v4.widget.NestedScrollView;
+
+
+
 
 public class addPathActivity extends AppCompatActivity implements View.OnTouchListener {
 
@@ -22,21 +30,26 @@ public class addPathActivity extends AppCompatActivity implements View.OnTouchLi
     private ImageButton scrollUpBtn;
     private ImageButton scrollDownBtn;
     private HorizontalScrollView hsv;
-    private ScrollView vsv;
+    private NestedScrollView vsv;
     private RelativeLayout mapLayout;
 
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add_path);
 
         hsv = (HorizontalScrollView) findViewById(R.id.horizontal_scrollview);
-        vsv = (ScrollView) findViewById(R.id.vertical_scrollview);
+        vsv = (NestedScrollView) findViewById(R.id.vertical_scrollview);
         mapLayout = (RelativeLayout) findViewById(R.id.map_layout);
 
         v = new DrawPathView(this);
         v.setLayoutParams(new ViewGroup.LayoutParams(800,800));
+        v.setBackgroundResource(R.drawable.floorlayout);
+        v.setZOrderOnTop(true);
+        v.getHolder().setFormat(PixelFormat.TRANSLUCENT);
         mapLayout.addView(v);
 
         scrollLeftBtn = (ImageButton) findViewById(R.id.btn_scroll_left);
