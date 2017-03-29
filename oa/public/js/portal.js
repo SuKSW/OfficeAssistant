@@ -58,9 +58,10 @@ function positionRobot(evt){
     canvasLocateRobot.removeEventListener("mousemove",positionDisplay);
     robotImage.src = 'img/tinyRobot.png';
     robotImage.addEventListener("load", function(){canvasLocateRobotContext.drawImage(robotImage,mousePos.x -robotImage.width/2,mousePos.y-robotImage.height/2)}, false);
-    currentX=mousePos.x;
-    currentY=mousePos.y;
-
+    currentX=Math.round(mousePos.x);
+    currentY=Math.round(mousePos.y);
+    document.getElementById("x").value = currentX;
+    document.getElementById("y").value = currentY;
 }
 function locateRefreshButton(){
     canvasLocateRobot.addEventListener("mousemove", locateRobot,false);
@@ -70,6 +71,26 @@ function locateFinishButton(){
     robotImage.src = 'img/tinyRobot.png';
     robotImage.addEventListener("load", function(){canvasRealtimeRobotContext.drawImage(robotImage,currentX -robotImage.width/2,currentY-robotImage.height/2)}, false);
     document.getElementById('locateWindow').style.display='none';
+    /*window.location.href = "positionRobot?x=" + currentX +"&y=" +currentY;
+    
+    http://www.somedomainname.com/positionRobot?x=mousePos.x&y=mousePos.y
+    */
+    // 'input[name="var"]'.val(var);
+    var xhttp = new XMLHttpRequest();
+    var url = "localhost:8000/portal/positionRobot";
+    xhttp.open("POST", url, true);
+    var params = "x=" + currentX +"&y=" +currentY;
+    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //xhttp.setRequestHeader("Content-length", params.length);
+    //xhttp.setRequestHeader('X-CSRF-TOKEN','{{csrf_token()}}');
+    //xhttp.setRequestHeader("Connection", "close");
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+         //alert('On ready state change');
+        }
+    };
+    xhttp.send(params);
+    
 }
 
 function positionDisplay(evt){
