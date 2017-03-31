@@ -72,12 +72,12 @@
 
     <div class="mainSection">
         <label>
-        path id: {{ $path->path_id }}
+        <!--path id: {{ $path->path_id }}
         initial x_coordinate: {{ $path->x_coordinate }}
         initial y_coordinate: {{ $path->y_coordinate }}
-        initial positioned at: {{ $path->created_at }}</label>
+        initial positioned at: {{ $path->created_at }}</label>-->
         <input type="hidden" name="res_x" value="{{ $path->x_coordinate }}">>
-        <input type="hidden" name="res_x" value="{{ $path->y_coordinate }}">>
+        <input type="hidden" name="res_y" value="{{ $path->y_coordinate }}">>
         <canvas id="realtimeMapCanvas" width="500" height="500"></canvas>
         <canvas id="realtimeRobotCanvas" width="500" height="500"></canvas>
     </div>

@@ -76,7 +76,7 @@ function locateFinishButton(){
     http://www.somedomainname.com/positionRobot?x=mousePos.x&y=mousePos.y
     */
     // 'input[name="var"]'.val(var);
-    var xhttp = new XMLHttpRequest();
+    /*var xhttp = new XMLHttpRequest();
     var url = "localhost:8000/portal/positionRobot";
     xhttp.open("POST", url, true);
     var params = "x=" + currentX +"&y=" +currentY;
@@ -89,7 +89,7 @@ function locateFinishButton(){
          //alert('On ready state change');
         }
     };
-    xhttp.send(params);
+    xhttp.send(params);*/
     
 }
 
