@@ -1,0 +1,76 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Robots</h1>
+      <form class="new-robot">
+        <h4>Add New Robot</h4>
+
+        <div class="row">
+          <label for="rnum">Robot number</label>
+          <input type="text" id="rnum" name="rnum" placeholder="Registered number">
+        </div>
+        
+        
+        <div class="row">
+          <label for="rname">Robot Name</label>
+          <input type="text" id="rname" name="rname">
+        </div>
+        
+
+        <div class="row">
+          <label for="ipAddress">IP Address</label>
+          <input type="text" id="ipAddress" name="ipAddress" placeholder="eg: 125.0.0.234">
+        </div>
+        <button type="submit" class="addRobotButton">Add Robot</button>
+      </form>
+    </header>
+
+    <ul>
+      {{#each robots}}
+        {{> robot}}
+      {{/each}}
+    </ul>
+  </div>
+  <div id="position_window_background" class="position_window_background">
+    <div class="position_window">
+      <span onclick="document.getElementById('position_window_background').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="mini_window_canvas_section">
+        <canvas id="locateMapCanvas" width="500" height="500">
+          Your browser does not support the HTML5 canvas tag.
+        </canvas>
+        <canvas id="locateRobotCanvas" width="500" height="500">
+          Your browser does not support the HTML5 canvas tag.
+        </canvas>
+      </div>
+      <div class="mini_window_button_section">
+        <h4>Locate the Robot</h4>
+        <ul>
+          <li>Take the cursor to the map to place the robot.</li>
+          <li> Click finish to submit the location of the robot to the system.</li> 
+          <li>Click refresh to recorrect the position the of the robot.</li>
+        </ul>
+        <button type="button" onclick="locateFinishButton()">Finish</button>
+        <button type="button" id="locateRefreshButton" class="orangeBtn">Refresh</button>
+        <button type="button" onclick="document.getElementById('position_window_background').style.display='none'" class="redBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<template name="robot">
+  <div class="robotList">
+  	<li class="{{#if checked}}checked{{/if}}">
+  		<button class="delete">&times;</button>
+  	    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+  	  	<span class="text">{{robot_name}}</span>
+  	  	<span class="text">{{robot_number}}</span>
+  	  	<span class="text">{{robot_ipaddress}}</span>
+        <span class="text">{{createdAt}}</span>
+        {{ initX }}
+        {{ initY }}
+        <button type="button" class="purpleBtn" onclick = "changeLocationOfRobotButton()">Position Robot</button>
+  	</li>
+  </div>
+</template>
+
+
