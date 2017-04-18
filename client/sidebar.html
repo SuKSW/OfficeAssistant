@@ -1,0 +1,34 @@
+<template name="mainSide">
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                       SideBar Layout
+                    </a>
+                </li>
+                <li>
+                    <a href="/">Realtime</a>
+                </li>
+                <li>
+                    <a href="/users">Users</a>
+                </li>
+				<li>
+                    <a href="/robots">Robots</a>
+                </li>
+				<li>
+                    <a href="/maps">Maps</a>
+                </li>
+                <li>
+                    <a href="/changePath">Change path</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                {{>yield}}
+            </div>
+        </div>
+    </div>
+	
+</template>
