@@ -5,19 +5,34 @@
 #pathRobotCanvas{
      border:1px solid black;
      position: absolute;
-     margin: 3% auto;
+     margin: 0% 10% auto auto;
      z-index: 2; left:0; right: 0;
 }
 
 #pathMapCanvas{
      border:1px solid red;
      position: absolute;
-     margin: 3% auto;
+     margin: 0% 10% auto auto;
      z-index: 1; left:0; right: 0;
 }
 
+#pathInfoCanvas{
+    background-color: white;
+     border:1px solid black;
+     position: absolute;
+     margin: 3% auto auto 10%;
+     z-index: 1; left:0; right: 0;
+}
 
+#pathToDBButton{
+  margin-top: 30%;
+  margin-left: 10%;
+  display: block;
+}
 
+#pathToRobotButton{
+  margin-left: 10%;
+}
 
 
 /*---------------------------------------- Robots page */

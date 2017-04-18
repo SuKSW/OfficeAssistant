@@ -53,8 +53,10 @@ var textItem2;
 
 
 function allTheDrawing(){
+	canvasPathInfo = document.getElementById('pathInfoCanvas');
 	canvasPathRobot = document.getElementById('pathRobotCanvas');
-	paper.setup(canvasPathRobot);
+	paper.setup(canvasPathInfo);
+	
 	textItem = new paper.PointText({
     	content: 'Click and drag to draw a line.',
     	point: new paper.Point(20, 30),
@@ -63,13 +65,14 @@ function allTheDrawing(){
 
 	textItem2 = new paper.PointText({
 	    content: 'locations',
-	    point: new paper.Point(20, 50),
+	    point: new paper.Point(20, 70),
 	    fillColor: 'black',
 	});	
 }
 var path;
 function startThePath(event){
 	canvasPathRobot = document.getElementById('pathRobotCanvas');
+	paper.setup(canvasPathRobot);
 	if (path) {
 		    path.selected = false;
 	}
@@ -77,7 +80,9 @@ function startThePath(event){
 	// Create a new path and set its stroke color to black:
 	path = new paper.Path({
 	    segments: [getMousePos(canvasPathRobot, event)],
-	    strokeColor: 'black',
+	    strokeColor: 'blue',
+	    strokeWidth: 10,
+	    strokeCap: 'round',
 	    // Select the path, so we can see its segment points:
 	    fullySelected: true
 	});
@@ -106,12 +111,12 @@ function finishThePath(){
       	console.log(newSegmentCount);
 	    var difference = segmentCount - newSegmentCount;
 	    var percentage = 100 - Math.round(newSegmentCount / segmentCount * 100);
-	    textItem.content = difference + ' of the ' + segmentCount + ' segments were removed. Saving ' + percentage + '%';
+	    textItem.content = difference + ' of the ' + segmentCount + ' segments were removed.\nSaving ' + percentage + '% of space';
 		
 		for (var i = 0; i < newSegmentCount; i++) {
 			var x = path.segments[i].point.x;
 			var y = path.segments[i].point.y;
-			textItem2.content = 'Segment point x: ' + x +' y:'+y;
+			textItem2.content = 'Last segment point\nx: ' + x +'\ny: '+y;
 		}
 }
 

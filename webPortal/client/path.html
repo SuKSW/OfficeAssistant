@@ -1,7 +1,11 @@
 <template name="pathPage">
 	<h1>Path</h1>
+	<canvas id="pathInfoCanvas" width="300" height="200" resize></canvas>
 	<canvas id="pathMapCanvas" width="500" height="500" resize></canvas>
 	{{> pathRobotCanvasTemplate}}
+
+	<button type="button" onclick="" id="pathToDBButton">Add path to database</button>
+	<button type="button" onclick="" id="pathToRobotButton">Submit path to robot</button>
 	
 </template>
 
