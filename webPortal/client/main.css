@@ -2,14 +2,13 @@
 
 
 /* ------------------------------------------------------    Path page */
-<<<<<<< HEAD
+
 #pathInfoScroll {
     width: 370px;
     height: 200px;
     overflow: scroll;
 }
-=======
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
+
 #pathRobotCanvas{
      border:1px solid black;
      position: absolute;
@@ -27,30 +26,19 @@
 #pathInfoCanvas{
     background-color: white;
      border:1px solid black;
-<<<<<<< HEAD
-=======
-     position: absolute;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
      margin: 3% auto auto 10%;
      z-index: 1; left:0; right: 0;
 }
 
 #pathToDBButton{
-<<<<<<< HEAD
   margin-top: 5%;
   margin-left: 10%;
   display: block;
   width: 250px;
-=======
-  margin-top: 30%;
-  margin-left: 10%;
-  display: block;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 }
 
 #pathToRobotButton{
   margin-left: 10%;
-<<<<<<< HEAD
   display: block;
   width: 250px;
 }
@@ -59,8 +47,6 @@
   display: block;
   margin-left: 10%;
   width: 250px;
-=======
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 }
 
 
@@ -76,12 +62,10 @@ button {
     width: auto;
     font:bold 16px Tahoma;
 }
-<<<<<<< HEAD
+
 h1{color:7986A3;}
 h4{font: bold 16px Tahoma;}
-=======
-h1{color:white;}
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
+
 
 
 .addRobotForm{
@@ -116,20 +100,7 @@ input[type=text], select{
     box-sizing: border-box;   
 }
 
-<<<<<<< HEAD
 
-=======
-button[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 20px;
-    font: bold 15px sans-serif;
-}
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 
 button[type=submit]:hover {
     background-color: #45a049;
@@ -137,12 +108,7 @@ button[type=submit]:hover {
 /* CSS declarations go here */
 body {
   font-family: "Tahoma", sans-serif;
-<<<<<<< HEAD
-  background-color: #CCD1DB;
-=======
-  background-color: #009999;
-  background-image: linear-gradient(to bottom, #009999, #ffffff 100%);
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
+  background-color: #D7D2F7;
   background-attachment: fixed;
   position: absolute;
   top: 0;
@@ -274,11 +240,7 @@ header .hide-completed {
   background-color:orange;
 }
 .purpleBtn{
-<<<<<<< HEAD
-  background-color:#B269CF;
-=======
-  background-color:purple;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
+  background-color:#C42354;
 }
 .close_icon{
     text-decoration: none;
@@ -337,7 +299,6 @@ header .hide-completed {
 
 
 /* -------------------------------------------------------   Common to all pages */
-<<<<<<< HEAD
 #giveSpaceToCanvas{
   margin-top:600px;
 }
@@ -346,8 +307,6 @@ header .hide-completed {
   margin-bottom: 50px;
 }
 
-=======
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -368,11 +327,7 @@ header .hide-completed {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-<<<<<<< HEAD
     background: #293347;
-=======
-    background: #000;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -413,11 +368,7 @@ header .hide-completed {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-<<<<<<< HEAD
     color: #fff;
-=======
-    color: #999999;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 }
  
 .sidebar-nav li a:hover {
@@ -433,20 +384,12 @@ header .hide-completed {
  
 .sidebar-nav > .sidebar-brand {
     height: 65px;
-<<<<<<< HEAD
     font-size: 22px;
-=======
-    font-size: 18px;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
     line-height: 60px;
 }
  
 .sidebar-nav > .sidebar-brand a {
-<<<<<<< HEAD
     color: #fff;
-=======
-    color: #999999;
->>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 }
  
 .sidebar-nav > .sidebar-brand a:hover {
