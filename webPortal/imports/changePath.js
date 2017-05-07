@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Path1 } from '/api/collections.js';
+=======
+import { Template } from 'meteor/templating';
+>>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 
 var currentX=100;
 var currentY=100;
@@ -102,7 +106,11 @@ function finishThePath(){
 		var segmentCount = path.segments.length;
 		
 	    // When the mouse is released, simplify it:
+<<<<<<< HEAD
 	    path.simplify(5);
+=======
+	    path.simplify(10);
+>>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 
 	    // Select the path, so we can see its segments:
 	    path.fullySelected = true;
@@ -112,6 +120,7 @@ function finishThePath(){
 	    var difference = segmentCount - newSegmentCount;
 	    var percentage = 100 - Math.round(newSegmentCount / segmentCount * 100);
 	    textItem.content = difference + ' of the ' + segmentCount + ' segments were removed.\nSaving ' + percentage + '% of space';
+<<<<<<< HEAD
 		textItem2.content ='';
 		for (var i = 0; i < newSegmentCount; i++) {
 			var x = path.segments[i].point.x;
@@ -123,6 +132,13 @@ function finishThePath(){
 		      createdAt: new Date(), // current time
 		      i
 		    });
+=======
+		
+		for (var i = 0; i < newSegmentCount; i++) {
+			var x = path.segments[i].point.x;
+			var y = path.segments[i].point.y;
+			textItem2.content = 'Last segment point\nx: ' + x +'\ny: '+y;
+>>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756
 		}
 }
 
@@ -132,6 +148,7 @@ function getMousePos(canvas, evt) {
     x: evt.clientX - rect.left,
     y: evt.clientY - rect.top
   };
+<<<<<<< HEAD
 }
 //-------------------- coordinates list -------------------------------
 delPathFromDBButton = function(){
@@ -145,3 +162,6 @@ Template.pathPage.helpers({
 });
 
 
+=======
+}
+>>>>>>> 5e8b2cdb8ec8b6388d1b007fd59cc46ed0262756

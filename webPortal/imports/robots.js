@@ -26,7 +26,7 @@ Template.robotsPage.helpers({
 });
 
 Template.robotsPage.events({
-  'submit .new-robot'(event) {
+  'submit #new-robot'(event) {
     // Prevent default browser form submit
     event.preventDefault();
 
