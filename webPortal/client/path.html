@@ -1,0 +1,50 @@
+<template name="pathPage">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h3>Path Insertion</h3></div>
+		<div class="panel-body">			
+			<canvas id="pathMapCanvas" width="500" height="500" resize></canvas>
+			{{> pathRobotCanvasTemplate}}
+			<div id="pathInfoScroll">
+				<canvas id="pathInfoCanvas" width="300" height="500"></canvas>
+			</div>
+			<div class="pathPageButtons">
+				<button type="button" class="btn-primary" onclick="" id="pathToDBButton">Add path to database</button>
+				<button type="button" class="btn-danger" onclick="delPathFromDBButton()" id="delPathFromDBButton">Delete path from database</button>
+				<button type="button" class="btn-primary" onclick="" id="pathToRobotButton">Submit path to robot</button>
+			</div>
+			<p id="giveSpaceToCanvas2">
+				The path inserted into the database: 
+			</p>
+			<table class="table">
+		  		<thead>
+			      <tr>
+			        <th>X coordinate</th>
+			        <th>Y coordinate</th>
+			        <th>Index</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      
+			        {{#each getcordinates}}
+						{{> cordinates}}
+					{{/each}}
+			      
+			    </tbody>
+			</table>
+			
+		</div>
+	</div>
+	
+</template>
+
+<template name="pathRobotCanvasTemplate">
+	    <canvas id="pathRobotCanvas" width="500" height="500"></canvas>    
+</template>
+
+<template name="cordinates">
+  		<tr>
+	        <td>{{x}}</td>
+	        <td>{{y}}</td>
+	        <td>{{i}}</td>
+	    </tr>
+</template>
