@@ -6,6 +6,8 @@ Meteor.startup(() => {
 	return Meteor.methods({
 	  	removePath1 : function(){
 	  		return Path1.remove({});
-	  	}
+	  	},
+
+	  	
 	});
 });

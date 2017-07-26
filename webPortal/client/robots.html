@@ -34,6 +34,8 @@
 				        <th>Robot Number</th>
 				        <th>Robot IP Address</th>
 				        <th>Created At</th>
+				        <th>InitX</th>
+				        <th>InitY</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -80,7 +82,9 @@
   	  	<td><span class="text">{{robot_number}}</span></td>
   	  	<td><span class="text">{{robot_ipaddress}}</span></td>
         <td><span class="text">{{createdAt}}</span></td>
-        <td><button type="button" class="purpleBtn" onclick = "changeLocationOfRobotButton()">Position Robot</button></td>
+        <td><span class="text">{{init_X}}</span></td>
+        <td><span class="text">{{init_Y}}</span></td>
+        <td><button type="button" id="addInitLoc" class="purpleBtn" onclick = "changeLocationOfRobotButton()">Position Robot</button></td>
         <td><button class="delete">&times;</button></td>
   	</tr>
   

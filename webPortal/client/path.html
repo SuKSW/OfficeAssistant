@@ -9,9 +9,13 @@
 				<canvas id="pathInfoCanvas" width="300" height="500"></canvas>
 			</div>
 			<div class="pathPageButtons">
-				<button type="button" class="btn-primary" onclick="" id="pathToDBButton">Add path to database</button>
+				<div class="form-group" id="selectRobotInput">
+					<input type="text" id="selectRobot" name="selectRobot" placeholder="Robot name">
+					<button type="button" class="btn-primary" onclick="selectRobot()" id="selectRobotButton">Select Robot</button>
+				</div>
+				<button type="button" class="btn-primary" onclick="addPathToDBButton()" id="pathToDBButton">Add path to database</button>
 				<button type="button" class="btn-danger" onclick="delPathFromDBButton()" id="delPathFromDBButton">Delete path from database</button>
-				<button type="button" class="btn-primary" onclick="" id="pathToRobotButton">Submit path to robot</button>
+				<button type="button" class="btn-success" onclick="pathToRobotButton()" id="pathToRobotButton">Submit path to robot</button>
 			</div>
 			<p id="giveSpaceToCanvas2">
 				The path inserted into the database: 
@@ -19,9 +23,11 @@
 			<table class="table">
 		  		<thead>
 			      <tr>
+			      	<th>Index</th>
 			        <th>X coordinate</th>
 			        <th>Y coordinate</th>
-			        <th>Index</th>
+			        <th>Angle</th>
+			        <th>Distance</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -45,8 +51,10 @@
 
 <template name="cordinates">
   		<tr>
+  			<td>{{i}}</td>
 	        <td>{{x}}</td>
 	        <td>{{y}}</td>
-	        <td>{{i}}</td>
+	        <td>{{angle}}</td>
+	        <td>{{distance}}</td>
 	    </tr>
 </template>

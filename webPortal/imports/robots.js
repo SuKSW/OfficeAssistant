@@ -3,7 +3,7 @@ import { Robots } from '/api/collections.js';
 
 var currentX=0;
 var currentY=0;
- 
+var robotId =0;
 
 Template.robot.events({
 
@@ -17,6 +17,11 @@ Template.robot.events({
   'click .delete'() {
     Robots.remove(this._id);
   },
+
+  'click #addInitLoc': function(){
+        robotId = this._id;
+  },
+
 });
 
 Template.robotsPage.helpers({
@@ -35,6 +40,8 @@ Template.robotsPage.events({
     const robot_name = target.rname.value;
     const robot_number = target.rnum.value;
     const robot_ipaddress = target.ipAddress.value;
+    const init_X = currentX;
+    const init_Y = currentY;
 
     // Insert a task into the collection
     Robots.insert({
@@ -42,6 +49,8 @@ Template.robotsPage.events({
       robot_number,
       robot_ipaddress,
       createdAt: new Date(), // current time
+      init_X,
+      init_Y,
     });
 
     // Clear form
@@ -93,11 +102,15 @@ function locateRefreshButton(){
   canvasLocateRobot.addEventListener("mousemove", locateRobot,false);
   canvasLocateRobot.addEventListener('mousemove', positionDisplay, false);
 }
-function locateFinishButton(){
-  Robots.update(this._id, {
-      $set: { initX: currentX },
-      $set: { initY: currentY },
-    });
+ locateFinishButton=function (){
+  //Meteor.call('addInitLoc');
+  Robots.update({ _id: robotId}, {
+          $set: { 
+            init_X: currentX,
+            init_Y: currentY 
+          } 
+        });
+    
   document.getElementById('position_window_background').style.display='none';
 }
 
@@ -117,8 +130,8 @@ function writeMessage(canvas, message) {
 function getMousePos(canvas, evt) {
   var rect = canvas.getBoundingClientRect();
   return {
-    x: evt.clientX - rect.left,
-    y: evt.clientY - rect.top
+    x: Math.round(evt.clientX - rect.left),
+    y: Math.round(evt.clientY - rect.top)
   };
 }
 

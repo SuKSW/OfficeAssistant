@@ -3,6 +3,11 @@
 
 /* ------------------------------------------------------    Path page */
 
+
+#selectRobot{
+  margin-top: 20px;
+  margin-left: 20px;
+}
 #pathInfoScroll {
     width: 370px;
     height: 200px;
@@ -31,40 +36,27 @@
 }
 
 #pathToDBButton{
-  margin-top: 5%;
-  margin-left: 10%;
+  margin-top: 10px;
+  margin-left: 60px;
   display: block;
   width: 250px;
 }
 
 #pathToRobotButton{
-  margin-left: 10%;
+  margin-left: 60px;
   display: block;
   width: 250px;
 }
 
 #delPathFromDBButton{
   display: block;
-  margin-left: 10%;
+  margin-left: 60px;
   width: 250px;
 }
 
 
 /*---------------------------------------- Robots page */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 8px 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: auto;
-    font:bold 16px Tahoma;
-}
 
-h1{color:7986A3;}
-h4{font: bold 16px Tahoma;}
 
 
 
@@ -92,33 +84,6 @@ form{
   padding:2px;
 }
 
-input[type=text], select{
-    
-    padding: 6px;
-    border: 1px solid #ccb;
-    border-radius: 4px;
-    box-sizing: border-box;   
-}
-
-
-
-button[type=submit]:hover {
-    background-color: #45a049;
-}
-/* CSS declarations go here */
-body {
-  font-family: "Tahoma", sans-serif;
-  background-color: #D7D2F7;
-  background-attachment: fixed;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
 
 .container {
   max-width: 600px;
@@ -209,14 +174,58 @@ header .hide-completed {
 }
 .position_window{
     background: #fefefe;
-    margin: 1% auto 1% auto; /* 2% from the top, 8% from the bottom and centered */
+    margin: 5px auto 1% auto; /* 2% from the top, 8% from the bottom and centered */
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    height: 90%;
+    height: 560px;
     text-align: center; 
     border-radius: 4px;
 }
 
+
+.mini_window_button_section{
+    width: 40%; height: 500px;
+    margin: 3% auto 2% 2%;
+    background-color:#f1f1f1;
+    text-align: center;
+    padding-top: 10px; 
+} 
+.position_window_background li {
+    width: 90%;
+    text-align: left;
+}
+#locateRobotCanvas{
+     border:1px solid #d3d3d3;
+     position: absolute;
+     margin: 3% auto;  
+     z-index: 4;
+}
+#locateMapCanvas{
+     border:1px solid red;
+     position: absolute;
+     margin: 3% auto;
+     z-index: 3; 
+}
+
+
+/* ------------------------------------------------------    Realtime page */
+#realtimeRobotCanvas{
+     border:1px solid black;
+     position: absolute;
+     margin: 3% auto;
+     z-index: 2; left:0; right: 0;
+}
+
+#realtimeMapCanvas{
+     border:1px solid red;
+     position: absolute;
+     margin: 3% auto;
+     z-index: 1; left:0; right: 0;
+}
+
+
+
+/* -------------------------------------------------------   Common to all pages */
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -257,48 +266,50 @@ header .hide-completed {
   color: black;
 }
 
-.mini_window_button_section{
-    width: 40%; height: 500px;
-    margin: 3% auto 2% 2%;
-    background-color:#f1f1f1;
-    text-align: center;
-} 
-.position_window_background li {
-    width: 90%;
-    text-align: left;
-}
-#locateRobotCanvas{
-     border:1px solid #d3d3d3;
-     position: absolute;
-     margin: 3% auto;  
-     z-index: 4;
-}
-#locateMapCanvas{
-     border:1px solid red;
-     position: absolute;
-     margin: 3% auto;
-     z-index: 3; 
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    font:bold 14px Tahoma;
 }
 
+h1{color:7986A3;}
+h4{font: bold 16px Tahoma;}
 
-/* ------------------------------------------------------    Realtime page */
-#realtimeRobotCanvas{
-     border:1px solid black;
-     position: absolute;
-     margin: 3% auto;
-     z-index: 2; left:0; right: 0;
-}
-
-#realtimeMapCanvas{
-     border:1px solid red;
-     position: absolute;
-     margin: 3% auto;
-     z-index: 1; left:0; right: 0;
+input[type=text], select{
+    
+    padding: 6px;
+    border: 1px solid #ccb;
+    border-radius: 4px;
+    box-sizing: border-box;   
 }
 
 
 
-/* -------------------------------------------------------   Common to all pages */
+button[type=submit]:hover {
+    background-color: #45a049;
+}
+/* CSS declarations go here */
+body {
+  font-family: "Tahoma", sans-serif;
+  background-color: #D7D2F7;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
 #giveSpaceToCanvas{
   margin-top:600px;
 }
@@ -320,7 +331,7 @@ header .hide-completed {
 }
  
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 0;
     position: fixed;
     left: 250px;
     width: 0;
