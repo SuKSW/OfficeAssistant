@@ -1,6 +1,6 @@
 # Office Assaistant 
 
-*Supposed* to be a system where a robot travels in the path drawn in the web portal or Arduino app and deliver office documents or equipments. 
+*Supposed* to be a system where a robot travels in a path drawn in the web portal or Arduino app and deliver office documents or equipment. 
 
 * OAweb - Office assistant web componant (test) only with **HTML, Js, CSS**
 * OfficeAssistant - a sample **Android** app for the Office Assistant System
